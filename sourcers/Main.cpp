@@ -1,22 +1,16 @@
-#include <fstream>
+#include "../headers/DataSource.h"
 
 int main()
 {
-    std::ifstream fin;
-    std::ofstream fout;
+    std::string caminho_arquivo_entrada, caminho_arquivo_saida;
 
-    fin.open("../datasource/datasource.txt");
-    fout.open("../out/relatorio-coleta.txt");
+    caminho_arquivo_entrada = "../datasource/pessoa.txt";
+    caminho_arquivo_saida = "../datasource/relatorio-coleta.txt";
 
-    std::string test;
-    std::getline(fin, test);
+    DataSource data_source(caminho_arquivo_entrada, caminho_arquivo_saida);
 
-    test += " Seus dados foram carregados e estão sendo alterados!";
-
-    fout << test;
-
-    fin.close();
-    fout.close();
+    data_source.abrir_arquivo();
+    data_source.fechar_arquivo();
 
     return 0;
 }
