@@ -1,7 +1,7 @@
 #include <fstream>
 #include <iostream>
 
-class DataSource
+class DataAccess
 {
 private:
     std::string caminho_arquivo_entrada, caminho_arquivo_saida;
@@ -9,7 +9,7 @@ private:
     std::ofstream arquivo_saida;
 
 public:
-    DataSource(std::string caminho_arquivo_entrada, std::string caminho_arquivo_saida);
+    DataAccess(std::string caminho_arquivo_entrada, std::string caminho_arquivo_saida);
 
     void abrir_arquivo();
     void fechar_arquivo();

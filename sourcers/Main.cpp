@@ -1,4 +1,4 @@
-#include "../headers/DataSource.h"
+#include "../headers/DataAccess.h"
 
 int main()
 {
@@ -7,7 +7,7 @@ int main()
     caminho_arquivo_entrada = "../datasource/pessoa.txt";
     caminho_arquivo_saida = "../datasource/relatorio-coleta.txt";
 
-    DataSource data_source(caminho_arquivo_entrada, caminho_arquivo_saida);
+    DataAccess data_source(caminho_arquivo_entrada, caminho_arquivo_saida);
 
     data_source.abrir_arquivo();
     data_source.fechar_arquivo();

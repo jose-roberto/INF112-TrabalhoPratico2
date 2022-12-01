@@ -1,8 +1,8 @@
-#include "../headers/DataSource.h"
+#include "../headers/DataAccess.h"
 
-DataSource::DataSource(std::string caminho_arquivo_entrada, std::string caminho_arquivo_saida) : caminho_arquivo_entrada(caminho_arquivo_entrada), caminho_arquivo_saida(caminho_arquivo_saida){};
+DataAccess::DataAccess(std::string caminho_arquivo_entrada, std::string caminho_arquivo_saida) : caminho_arquivo_entrada(caminho_arquivo_entrada), caminho_arquivo_saida(caminho_arquivo_saida){};
 
-void DataSource::abrir_arquivo()
+void DataAccess::abrir_arquivo()
 {
     arquivo_entrada.open(caminho_arquivo_entrada, std::ios::in);
     if (!arquivo_entrada.is_open())
@@ -19,7 +19,7 @@ void DataSource::abrir_arquivo()
     }
 }
 
-void DataSource::fechar_arquivo()
+void DataAccess::fechar_arquivo()
 {
     arquivo_entrada.close();
     if (arquivo_entrada.is_open())
