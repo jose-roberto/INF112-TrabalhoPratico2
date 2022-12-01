@@ -4,13 +4,15 @@
 class DataAccess
 {
 private:
-    std::string caminho_arquivo_entrada, caminho_arquivo_saida;
-    std::ifstream arquivo_entrada;
-    std::ofstream arquivo_saida;
+    std::string input_file_path, output_file_path;
+    std::ifstream input_file;
+    std::ofstream output_file;
 
 public:
-    DataAccess(std::string caminho_arquivo_entrada, std::string caminho_arquivo_saida);
+    DataAccess(std::string input_file_path, std::string output_file_path);
 
-    void abrir_arquivo();
-    void fechar_arquivo();
+    void open_input_file();
+    void open_output_file();
+    void close_input_file();
+    void close_output_file();
 };

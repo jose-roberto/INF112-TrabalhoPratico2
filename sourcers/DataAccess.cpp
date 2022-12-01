@@ -1,35 +1,41 @@
 #include "../headers/DataAccess.h"
 
-DataAccess::DataAccess(std::string caminho_arquivo_entrada, std::string caminho_arquivo_saida) : caminho_arquivo_entrada(caminho_arquivo_entrada), caminho_arquivo_saida(caminho_arquivo_saida){};
+DataAccess::DataAccess(std::string input_file_path, std::string output_file_path) : input_file_path(input_file_path), output_file_path(output_file_path){};
 
-void DataAccess::abrir_arquivo()
+void DataAccess::open_input_file()
 {
-    arquivo_entrada.open(caminho_arquivo_entrada, std::ios::in);
-    if (!arquivo_entrada.is_open())
+    input_file.open(input_file_path, std::ios::in);
+    if (!input_file.is_open())
     {
-        std::cerr << "Erro ao abrir o arquivo de arquivo_entrada!" << std::endl;
+        std::cerr << "Erro ao abrir o arquivo de input_file!" << std::endl;
         exit(1);
     }
+}
 
-    arquivo_saida.open(caminho_arquivo_saida);
-    if (!arquivo_saida.is_open())
+void DataAccess::open_output_file()
+{
+    output_file.open(output_file_path);
+    if (!output_file.is_open())
     {
         std::cerr << "Erro ao abrir o arquivo de saída!" << std::endl;
         exit(1);
     }
 }
 
-void DataAccess::fechar_arquivo()
+void DataAccess::close_input_file()
 {
-    arquivo_entrada.close();
-    if (arquivo_entrada.is_open())
+    input_file.close();
+    if (input_file.is_open())
     {
-        std::cerr << "Erro ao fechar o arquivo de arquivo_entrada!" << std::endl;
+        std::cerr << "Erro ao fechar o arquivo de input_file!" << std::endl;
         exit(1);
     }
+}
 
-    arquivo_saida.close();
-    if (arquivo_saida.is_open())
+void DataAccess::close_output_file()
+{
+    output_file.close();
+    if (output_file.is_open())
     {
         std::cerr << "Erro ao fechar o arquivo de saída!" << std::endl;
         exit(1);
