@@ -10,4 +10,7 @@ public:
 
     std::string getCNPJ();
     void setCNPJ(std::string cnpj);
+
+    std::string toString();
+    void show();
 };
