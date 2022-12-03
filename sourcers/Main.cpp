@@ -1,19 +1,19 @@
 #include "../headers/DataAccess.h"
+#include "../headers/DAOPessoaFisica.h"
 
 int main()
 {
-    std::string input_file_path, output_file_path;
+    DAOPessoaFisica dao_pessoa_fisica;
+    PessoaFisica pessoa_fisica(1, "José", "Rua Dom João VI", "jose@gmail.com", "thiago", 0, "165");
 
-    input_file_path = "../datasource/pessoa.txt";
-    output_file_path = "../datasource/relatorio-coleta.txt";
+    // PessoaJuridica pessoa_juridica(2, "Firma", "Travessa 2", "firma@", "Dced", 1, "00145");
 
-    DataAccess data_source(input_file_path, output_file_path);
-
-    data_source.open_input_file();
-    data_source.open_output_file();
-
-    data_source.close_input_file();
-    data_source.close_output_file();
+    //dao_pessoa_fisica.createPessoaFisica(pessoa_fisica);
+    dao_pessoa_fisica.readPessoaFisica(pessoa_fisica.getId());
+    pessoa_fisica.setEmail("miss brasil 2000");
+    dao_pessoa_fisica.updatePessoaFisica(pessoa_fisica);
+    dao_pessoa_fisica.readPessoaFisica(pessoa_fisica.getId());
+    dao_pessoa_fisica.deletePessoaFisica(2);
 
     return 0;
 }

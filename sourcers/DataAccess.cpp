@@ -12,14 +12,55 @@ void DataAccess::open_input_file()
     }
 }
 
-void DataAccess::open_output_file()
+void DataAccess::open_output_file(bool mode)
 {
-    output_file.open(output_file_path);
+    if (mode)
+        output_file.open(output_file_path, std::ios::app);
+    else
+        output_file.open(output_file_path);
+
     if (!output_file.is_open())
     {
         std::cerr << "Erro ao abrir o arquivo de saída!" << std::endl;
         exit(1);
     }
+}
+
+void DataAccess::update_output_file(std::string data)
+{
+    output_file << data;
+}
+
+std::vector<std::string> DataAccess::read_data()
+{
+    std::vector<std::string> data;
+    std::string line, slice;
+
+    while (1)
+    {
+        std::getline(input_file, line);
+
+        // std::cout << line << std::endl;
+
+        int j = 0;
+        for (int i = 0; i < line.size(); i++)
+        {
+            if (line[i] == '/')
+            {
+                int aux = i - j;
+                slice = line.substr(j, aux);
+                // std::cout << slice << std::endl;
+                j = i + 1;
+
+                data.push_back(slice);
+            }
+        }
+
+        if (input_file.eof())
+            break;
+    }
+
+    return data;
 }
 
 void DataAccess::close_input_file()
