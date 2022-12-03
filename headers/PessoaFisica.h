@@ -1,5 +1,4 @@
 #include "Pessoa.h"
-
 class PessoaFisica : public Pessoa
 {
 private:
@@ -10,4 +9,7 @@ public:
 
     std::string getCPF();
     void setCPF(std::string cpf);
+
+    std::string toString();
+    void show();
 };
