@@ -51,6 +51,7 @@ void DAOPessoaFisica::updatePessoaFisica(PessoaFisica pessoa_fisica)
             objects[i].setEmail(pessoa_fisica.getEmail());
             objects[i].setSenha(pessoa_fisica.getSenha());
             objects[i].setTipo(pessoa_fisica.getTipo());
+            objects[i].setCPF(pessoa_fisica.getCPF());
 
             break;
         }
