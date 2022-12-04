@@ -1,6 +1,6 @@
 #include "../headers/Pessoa.h"
 
-Pessoa::Pessoa(int id, std::string nome, std::string endereco, std::string email, std::string senha, int tipo) : id(id), nome(nome), endereco(endereco), email(email), senha(senha), tipo(tipo){};
+Pessoa::Pessoa(int id, std::string nome, std::string endereco, std::string email, std::string senha, int modalidade) : id(id), nome(nome), endereco(endereco), email(email), senha(senha), modalidade(modalidade){};
 
 int Pessoa::getId()
 {
@@ -52,12 +52,12 @@ void Pessoa::setSenha(std::string senha)
     this->senha = senha;
 }
 
-int Pessoa::getTipo()
+int Pessoa::getModalidade()
 {
-    return this->tipo;
+    return this->modalidade;
 }
 
-void Pessoa::setTipo(int tipo)
+void Pessoa::setModalidade(int modalidade)
 {
-    this->tipo = tipo;
+    this->modalidade = modalidade;
 }

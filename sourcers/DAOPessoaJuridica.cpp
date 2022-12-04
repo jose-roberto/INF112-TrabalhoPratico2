@@ -15,7 +15,7 @@ void DAOPessoaJuridica::createPessoaJuridica(PessoaJuridica pessoa_juridica)
     data_access->open_output_file(true);
 
     cleanDataLine();
-    data_line = "\n" + std::to_string(pessoa_juridica.getId()) + "/" + pessoa_juridica.getNome() + "/" + pessoa_juridica.getEndereco() + "/" + pessoa_juridica.getEmail() + "/" + pessoa_juridica.getSenha() + "/" + std::to_string(pessoa_juridica.getTipo()) + "/" + pessoa_juridica.getCNPJ() + "/";
+    data_line = "\n" + std::to_string(pessoa_juridica.getId()) + "/" + pessoa_juridica.getNome() + "/" + pessoa_juridica.getEndereco() + "/" + pessoa_juridica.getEmail() + "/" + pessoa_juridica.getSenha() + "/" + std::to_string(pessoa_juridica.getModalidade()) + "/" + pessoa_juridica.getCNPJ() + "/";
 
     data_access->update_output_file(data_line);
 
@@ -50,7 +50,7 @@ void DAOPessoaJuridica::updatePessoaJuridica(PessoaJuridica pessoa_juridica)
             objects[i].setEndereco(pessoa_juridica.getEndereco());
             objects[i].setEmail(pessoa_juridica.getEmail());
             objects[i].setSenha(pessoa_juridica.getSenha());
-            objects[i].setTipo(pessoa_juridica.getTipo());
+            objects[i].setModalidade(pessoa_juridica.getModalidade());
             objects[i].setCNPJ(pessoa_juridica.getCNPJ());
 
             break;
@@ -91,7 +91,7 @@ void DAOPessoaJuridica::convertToObject(std::vector<std::string> data)
 
     int id;
     std::string nome, endereco, email, senha, cnpj;
-    int tipo;
+    int modalidade;
 
     int i = 0;
     while (i < data.size())
@@ -101,10 +101,10 @@ void DAOPessoaJuridica::convertToObject(std::vector<std::string> data)
         endereco = data[2 + i];
         email = data[3 + i];
         senha = data[4 + i];
-        tipo = std::stoi(data[5 + i]);
+        modalidade = std::stoi(data[5 + i]);
         cnpj = data[6 + i];
 
-        PessoaJuridica object(id, nome, endereco, email, senha, tipo, cnpj);
+        PessoaJuridica object(id, nome, endereco, email, senha, modalidade, cnpj);
         objects.push_back(object);
 
         i += 7;

@@ -15,7 +15,7 @@ void DAOPessoaFisica::createPessoaFisica(PessoaFisica pessoa_fisica)
     data_access->open_output_file(true);
 
     cleanDataLine();
-    data_line = "\n" + std::to_string(pessoa_fisica.getId()) + "/" + pessoa_fisica.getNome() + "/" + pessoa_fisica.getEndereco() + "/" + pessoa_fisica.getEmail() + "/" + pessoa_fisica.getSenha() + "/" + std::to_string(pessoa_fisica.getTipo()) + "/" + pessoa_fisica.getCPF() + "/";
+    data_line = "\n" + std::to_string(pessoa_fisica.getId()) + "/" + pessoa_fisica.getNome() + "/" + pessoa_fisica.getEndereco() + "/" + pessoa_fisica.getEmail() + "/" + pessoa_fisica.getSenha() + "/" + std::to_string(pessoa_fisica.getModalidade()) + "/" + pessoa_fisica.getCPF() + "/";
 
     data_access->update_output_file(data_line);
 
@@ -50,7 +50,7 @@ void DAOPessoaFisica::updatePessoaFisica(PessoaFisica pessoa_fisica)
             objects[i].setEndereco(pessoa_fisica.getEndereco());
             objects[i].setEmail(pessoa_fisica.getEmail());
             objects[i].setSenha(pessoa_fisica.getSenha());
-            objects[i].setTipo(pessoa_fisica.getTipo());
+            objects[i].setModalidade(pessoa_fisica.getModalidade());
             objects[i].setCPF(pessoa_fisica.getCPF());
 
             break;
@@ -91,7 +91,7 @@ void DAOPessoaFisica::convertToObject(std::vector<std::string> data)
 
     int id;
     std::string nome, endereco, email, senha, cpf;
-    int tipo;
+    int modalidade;
 
     int i = 0;
     while (i < data.size())
@@ -101,10 +101,10 @@ void DAOPessoaFisica::convertToObject(std::vector<std::string> data)
         endereco = data[2 + i];
         email = data[3 + i];
         senha = data[4 + i];
-        tipo = std::stoi(data[5 + i]);
+        modalidade = std::stoi(data[5 + i]);
         cpf = data[6 + i];
 
-        PessoaFisica object(id, nome, endereco, email, senha, tipo, cpf);
+        PessoaFisica object(id, nome, endereco, email, senha, modalidade, cpf);
         objects.push_back(object);
 
         i += 7;

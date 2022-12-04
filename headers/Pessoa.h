@@ -7,10 +7,10 @@ class Pessoa
 private:
     int id;
     std::string nome, endereco, email, senha;
-    int tipo;
+    int modalidade;
 
 public:
-    Pessoa(int id, std::string nome, std::string endereco, std::string email, std::string senha, int tipo);
+    Pessoa(int id, std::string nome, std::string endereco, std::string email, std::string senha, int modalidade);
 
     int getId();
     void setId(int id);
@@ -22,6 +22,6 @@ public:
     void setEmail(std::string email);
     std::string getSenha();
     void setSenha(std::string senha);
-    int getTipo();
-    void setTipo(int tipo);
+    int getModalidade();
+    void setModalidade(int modalidade);
 };
