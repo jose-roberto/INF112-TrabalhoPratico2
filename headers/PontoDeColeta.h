@@ -1,4 +1,6 @@
-#include <string>
+#pragma once
+
+#include <iostream>
 
 class PontoDeColeta
 {
@@ -13,4 +15,7 @@ public:
     void setId(int id);
     std::string getEndereco();
     void setEndereco(std::string endereco);
+
+    std::string toString();
+    void show();
 };

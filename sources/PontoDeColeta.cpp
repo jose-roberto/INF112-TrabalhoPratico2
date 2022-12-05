@@ -21,3 +21,13 @@ void PontoDeColeta::setEndereco(std::string endereco)
 {
     this->endereco = endereco;
 }
+
+void PontoDeColeta::show()
+{
+    std::cout << "Endereço: " << this->getEndereco() << std::endl;
+}
+
+std::string PontoDeColeta::toString()
+{
+    return std::to_string(this->getId()) + "/" + this->getEndereco() + "/";
+}
