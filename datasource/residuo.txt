@@ -4,5 +4,5 @@
 4/Metal/
 5/Lixo Químico/
 6/Lixo Eletrônico/
-7/Resíduos Hospitalares/
-8/Rejeitos/
+7/Resíduo Hospitalar/
+8/Rejeito/

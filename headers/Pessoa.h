@@ -10,7 +10,6 @@ private:
     int id;
     std::string nome, endereco, email, senha;
     int modalidade;
-    std::vector<Residuo> residuos;
 
 public:
     Pessoa(int id, std::string nome, std::string endereco, std::string email, std::string senha, int modalidade);
@@ -27,6 +26,4 @@ public:
     void setSenha(std::string senha);
     int getModalidade();
     void setModalidade(int modalidade);
-    std::vector<Residuo> getResiduos();
-    void setResiduos(std::vector<Residuo> residuos);
 };

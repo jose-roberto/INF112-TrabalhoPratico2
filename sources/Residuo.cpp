@@ -22,4 +22,9 @@ void Residuo::set_nome(std::string nome)
     this->_nome = nome;
 }
 
+void Residuo::show()
+{
+    std::cout << "Nome: " << this->get_nome() << std::endl;
+}
+
 void Residuo::armazenarResiduo() {}

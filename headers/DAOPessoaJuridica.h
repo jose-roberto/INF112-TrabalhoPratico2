@@ -17,7 +17,7 @@ public:
     void readPessoaJuridica(int id);
     void updatePessoaJuridica(PessoaJuridica pessoa_juridica);
     void deletePessoaJuridica(int id);
-    
+
     void convertToObject(std::vector<std::string> data);
     void cleanDataLine();
 };

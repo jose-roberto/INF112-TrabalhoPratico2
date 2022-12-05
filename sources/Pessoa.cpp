@@ -61,13 +61,3 @@ void Pessoa::setModalidade(int modalidade)
 {
     this->modalidade = modalidade;
 }
-
-std::vector<Residuo> Pessoa::getResiduos()
-{
-    return this->residuos;
-}
-
-void Pessoa::setResiduos(std::vector<Residuo> residuos)
-{
-    this->residuos = residuos;
-}

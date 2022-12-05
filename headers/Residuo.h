@@ -1,4 +1,6 @@
-#include <string>
+#pragma once
+
+#include <iostream>
 class Residuo
 {
 private:
@@ -13,5 +15,7 @@ public:
     std::string get_nome();
     void set_nome(std::string nome);
     
+    void show();
+
     virtual void armazenarResiduo();
 };
