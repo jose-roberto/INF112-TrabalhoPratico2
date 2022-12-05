@@ -1,5 +1,3 @@
 #include "../headers/NaoReciclavel.h"
 
-void NaoReciclavel::armazenarResiduo(){
-    
-}
+void NaoReciclavel::armazenarResiduo() {}

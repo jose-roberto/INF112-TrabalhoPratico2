@@ -1,3 +1,3 @@
 #include "../headers/Reciclavel.h"
 
-void Reciclavel::armazenarResiduo(){}
+void Reciclavel::armazenarResiduo() {}
