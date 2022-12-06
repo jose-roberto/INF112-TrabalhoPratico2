@@ -15,7 +15,10 @@ void DAOPessoaFisica::createPessoaFisica(PessoaFisica pessoa_fisica)
     data_access->open_output_file(true);
 
     cleanDataLine();
-    data_line = "\n" + std::to_string(pessoa_fisica.getId()) + "/" + pessoa_fisica.getNome() + "/" + pessoa_fisica.getEndereco() + "/" + pessoa_fisica.getEmail() + "/" + pessoa_fisica.getSenha() + "/" + std::to_string(pessoa_fisica.getModalidade()) + "/" + pessoa_fisica.getCPF() + "/";
+    if (pessoa_fisica.getId() != 1)
+        data_line = "\n";
+
+    data_line += pessoa_fisica.toString();
 
     data_access->update_output_file(data_line);
 

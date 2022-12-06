@@ -1,0 +1,10 @@
+1/Firma 5/Thiago/24041872/Dom João VI/false/
+2/Jose/Ronaldo/2478/D/false/
+3/Firma 3/Firma 1/0/VI/true/
+4/Firma 2/Jonathan Fogueteiro/001/Jo VI/true/
+5/Jose/Firma 1/98/I/false/
+6/1/Plástico/
+6/2/Video/
+6/3/Papel/
+
+6/José/Thiago/787/Rua do Bairro/1/

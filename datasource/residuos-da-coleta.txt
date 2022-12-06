@@ -1,0 +1,8 @@
+1/1/Plástico/
+1/2/Vidro/
+1/3/Papel/
+2/7/Resíduo Hospitalar/
+2/8/Rejeito/
+6/1/Plástico/
+6/2/Video/
+6/3/Papel/

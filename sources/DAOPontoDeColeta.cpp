@@ -15,7 +15,10 @@ void DAOPontoDeColeta::createPontoDeColeta(PontoDeColeta ponto_de_coleta)
     data_access->open_output_file(true);
 
     cleanDataLine();
-    data_line = "\n" + std::to_string(ponto_de_coleta.getId()) + "/" + ponto_de_coleta.getEndereco() + "/";
+    if (ponto_de_coleta.getId() != 1)
+        data_line = "\n";
+
+    data_line += ponto_de_coleta.toString();
 
     data_access->update_output_file(data_line);
 

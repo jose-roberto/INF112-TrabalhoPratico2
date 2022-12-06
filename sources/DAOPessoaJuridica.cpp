@@ -15,7 +15,10 @@ void DAOPessoaJuridica::createPessoaJuridica(PessoaJuridica pessoa_juridica)
     data_access->open_output_file(true);
 
     cleanDataLine();
-    data_line = "\n" + std::to_string(pessoa_juridica.getId()) + "/" + pessoa_juridica.getNome() + "/" + pessoa_juridica.getEndereco() + "/" + pessoa_juridica.getEmail() + "/" + pessoa_juridica.getSenha() + "/" + std::to_string(pessoa_juridica.getModalidade()) + "/" + pessoa_juridica.getCNPJ() + "/";
+    if (pessoa_juridica.getId() != 1)
+        data_line = "\n";
+
+    data_line += pessoa_juridica.toString();
 
     data_access->update_output_file(data_line);
 

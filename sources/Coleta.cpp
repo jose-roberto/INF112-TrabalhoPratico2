@@ -1,30 +1,30 @@
 #include "../headers/Coleta.h"
 
-Coleta::Coleta(int id, int id_doador, int id_receptor, int data, PontoDeColeta ponto_de_coleta, std::vector<Residuo> residuos, bool status) : id(id), id_doador(id_doador), id_receptor(id_receptor), data(data), ponto_de_coleta(ponto_de_coleta), residuos(residuos), status(status){};
+Coleta::Coleta(int id, std::string nome_doadora, std::string nome_receptora, std::string data, std::string endereco_coleta, std::vector<Residuo> residuos, bool status) : id(id), nome_doadora(nome_doadora), nome_receptora(nome_receptora), data(data), endereco_coleta(endereco_coleta), residuos(residuos), status(status){};
 
 int Coleta::get_id()
 {
     return this->id;
 }
 
-int Coleta::get_id_doador()
+std::string Coleta::get_nome_doadora()
 {
-    return this->id_doador;
+    return this->nome_doadora;
 }
 
-int Coleta::get_id_receptor()
+std::string Coleta::get_nome_receptora()
 {
-    return this->id_receptor;
+    return this->nome_receptora;
 }
 
-int Coleta::get_data()
+std::string Coleta::get_data()
 {
     return this->data;
 }
 
-PontoDeColeta Coleta::get_ponto_de_coleta()
+std::string Coleta::get_endereco_coleta()
 {
-    return this->ponto_de_coleta;
+    return this->endereco_coleta;
 }
 
 std::vector<Residuo> Coleta::get_residuos()
@@ -42,24 +42,24 @@ void Coleta::set_id(int id)
     this->id = id;
 }
 
-void Coleta::set_id_doador(int id_doador)
+void Coleta::set_nome_doadora(std::string nome_doadora)
 {
-    this->id_doador = id_doador;
+    this->nome_doadora = nome_doadora;
 }
 
-void Coleta::set_id_receptor(int id_receptor)
+void Coleta::set_nome_receptora(std::string nome_receptora)
 {
-    this->id_receptor = id_receptor;
+    this->nome_receptora = nome_receptora;
 }
 
-void Coleta::set_data(int data)
+void Coleta::set_data(std::string data)
 {
     this->data = data;
 }
 
-void Coleta::set_ponto_de_coleta(PontoDeColeta ponto_de_coleta)
+void Coleta::set_endereco_coleta(std::string endereco_coleta)
 {
-    this->ponto_de_coleta = ponto_de_coleta;
+    this->endereco_coleta = endereco_coleta;
 }
 
 void Coleta::set_residuos(std::vector<Residuo> residuos)
@@ -70,4 +70,19 @@ void Coleta::set_residuos(std::vector<Residuo> residuos)
 void Coleta::set_status(bool status)
 {
     this->status = status;
+}
+
+void Coleta::show()
+{
+    std::cout << "Doadora: " << this->nome_doadora << "\nReceptora: " << this->nome_receptora << "\nData: " << data << "\nEndereço da Coleta: " << this->endereco_coleta << "\nStatus: " << (this->get_status() == 0 ? "Efetuda" : "Não Efetuda") << std::endl;
+}
+
+std::string Coleta::toStringColeta()
+{
+    return std::to_string(this->get_id()) + "/" + this->nome_doadora + "/" + this->nome_receptora + "/" + this->get_data() + "/" + this->endereco_coleta + "/" + std::to_string(this->get_status()) + "/";
+}
+
+std::string Coleta::toStringResiduosDaColeta(int i)
+{
+    return std::to_string(this->get_id()) + "/" + std::to_string(this->residuos[i].get_id()) + "/" + this->residuos[i].get_nome() + "/";
 }
